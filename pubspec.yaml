@@ -1,6 +1,8 @@
 name: fluto_plugin_platform_interface
-description: A new Flutter package project.
-version: 0.0.1
+description: >-
+  A interface package of Fluto to create your own custom plugin.
+version: 0.1.1
+repository: https://github.com/shashankgupta3891/fluto_plugin_platform_interface
 # homepage:
 
 environment:
