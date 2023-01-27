@@ -3,16 +3,15 @@ import 'package:flutter/material.dart';
 class PluginConfiguration {
   final String name;
   final IconData icon;
+  final String description;
 
   PluginConfiguration({
     required this.name,
     required this.icon,
+    required this.description,
   });
 
   String get identifier => name.toLowerCase().replaceAll(" ", "_");
-
-  @override
-  String toString() => 'PluginConfiguration(name: $name, icon: $icon)';
 
   @override
   bool operator ==(Object other) {
@@ -21,4 +20,8 @@ class PluginConfiguration {
 
   @override
   int get hashCode => identifier.hashCode;
+
+  @override
+  String toString() =>
+      'PluginConfiguration(name: $name, icon: $icon, description: $description)';
 }
