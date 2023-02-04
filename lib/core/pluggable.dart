@@ -1,3 +1,4 @@
+import 'package:fluto_plugin_platform_interface/core/fluto_storage.dart';
 import 'package:fluto_plugin_platform_interface/core/navigation.dart';
 import 'package:fluto_plugin_platform_interface/model/developer_details.dart';
 import 'package:fluto_plugin_platform_interface/model/plugin_configuration.dart';
@@ -16,9 +17,14 @@ abstract class Pluggable {
   GlobalKey<NavigatorState>? _globalNavigatorKey;
   BuildContext? get context => _globalNavigatorKey?.currentContext;
 
+  FlutoStorage? get flutoStorage => _flutoStorage;
+  FlutoStorage? _flutoStorage = const NoFlutoStorage();
+
   @mustCallSuper
-  void setup(GlobalKey<NavigatorState> globalKey) {
+  void setup(GlobalKey<NavigatorState> globalKey,
+      {FlutoStorage? flutoStorage}) {
     try {
+      _flutoStorage = flutoStorage;
       _globalNavigatorKey = globalKey;
       onSetupDone?.call();
     } catch (e) {}
