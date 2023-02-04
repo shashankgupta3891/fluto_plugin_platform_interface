@@ -4,6 +4,7 @@ description: >-
 version: 0.1.1
 repository: https://github.com/shashankgupta3891/fluto_plugin_platform_interface
 # homepage:
+publish_to: none
 
 environment:
   sdk: '>=2.18.6 <3.0.0'
