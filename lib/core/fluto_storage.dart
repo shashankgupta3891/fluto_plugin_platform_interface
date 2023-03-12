@@ -4,7 +4,7 @@ abstract class FlutoStorage {
 
   factory FlutoStorage.none() => const NoFlutoStorage();
 
-  Future<void> save(String data);
+  Future<bool> save(String data);
 
   Future<String?> load();
 }
@@ -15,8 +15,8 @@ class NoFlutoStorage extends FlutoStorage {
   const NoFlutoStorage();
 
   @override
-  Future<String?> load() => Future<String?>.value(null);
+  Future<String?> load() => Future.value(null);
 
   @override
-  Future<void> save(String data) => Future.value();
+  Future<bool> save(String data) => Future.value(false);
 }
