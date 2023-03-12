@@ -2,7 +2,7 @@ import 'package:fluto_plugin_platform_interface/core/navigation.dart';
 import 'package:fluto_plugin_platform_interface/core/plugin_callback_register.dart';
 import 'package:fluto_plugin_platform_interface/model/developer_details.dart';
 import 'package:fluto_plugin_platform_interface/model/plugin_configuration.dart';
-import 'package:flutter/flutter.dart';
+import 'package:flutter/material.dart';
 
 abstract class Pluggable {
   final String devIdentifier;
@@ -16,7 +16,7 @@ abstract class Pluggable {
 
   GlobalKey<NavigatorState>? get globalNavigatorKey =>
       _pluginRegister?.globalNavigatorKey;
- 
+
   BuildContext? get context =>
       _pluginRegister?.globalNavigatorKey.currentContext;
 
