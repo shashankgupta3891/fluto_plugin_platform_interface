@@ -12,9 +12,11 @@ class PluginConfiguration {
     required this.name,
     required this.icon,
     required this.description,
-    showEnablePluginButton = true,
+    this.showEnablePluginButton = true,
     bool isInitialEnabled = true,
-  }): enable.value = isEnabled;
+  }) {
+    enable.value = isInitialEnabled;
+  }
 
   String get identifier => name.toLowerCase().replaceAll(" ", "_");
 
